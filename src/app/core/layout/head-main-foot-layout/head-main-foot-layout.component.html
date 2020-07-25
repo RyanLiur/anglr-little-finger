@@ -1,5 +1,11 @@
 <p>head-main-foot-layout works!</p>
-<a routerLink="/customers">Customers</a><br>
-<a routerLink="/orders">Orders</a><br>
-<a routerLink="">Home</a>
-<router-outlet></router-outlet>
+<nav>
+  <a routerLink="/customers" routerLinkActive="active">Customers</a>
+  <a routerLink="/orders" routerLinkActive="active">Orders</a>
+  <a routerLink="/admin" routerLinkActive="active">Admin</a>
+  <a routerLink="/login" routerLinkActive="active">Login</a>
+</nav>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
+<p>head-main-foot-layout end!</p>

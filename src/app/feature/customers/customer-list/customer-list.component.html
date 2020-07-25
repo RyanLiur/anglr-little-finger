@@ -1,4 +1,14 @@
 <p>customer-list works!</p>
-<form [formGroup]="paymentForm">
+<form [formGroup]="paymentForm" #pform>
   <input #ccNumber id="cc-number" formControlName="cardNumber" type="tel" title="Card number" placeholder="0000 0000 0000 0000" maxlength="19" [value]="ccNumber.value | paymentCardNumber" (input)="ccNumber.value=$event.target.value">
+  <p>Customers:</p>
+  <div *ngFor="let cus of customers; index as i; odd as isOdd;">
+    <input type="radio" id="customer-{{i}}" name="selectedCustomer" (click)="selectCustomer($event, cus.id)">
+    <label for="customer-{{i}}" [class.selected]="cus.id === beforeId">{{ cus.name }}</label>
+    <a *ngIf="isOdd" [routerLink]="['detail', cus.id]">Odd: {{ cus.id }}</a>
+    <a *ngIf="!isOdd" [routerLink]="['/customers/detail', cus.id]">Even: {{ cus.id }}</a>
+  </div>
+  <button type="button" (click)="toDetail()">Go to detail</button>
 </form>
+<div style="height: 1000px; width: 100%;">test for rooter scroll top!</div>
+<p>customer-list end!</p>

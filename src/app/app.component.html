@@ -2,4 +2,10 @@
 <h1>
   {{title}}
 </h1>
+<nav>
+  <a [routerLink]="[{ outlets: { popup: ['compose']} }]">Contact</a>
+  <a [routerLink]="[{ outlets: { popup: ['double-send']} }]">DSend</a>
+  <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+</nav>
 <router-outlet></router-outlet>
+<router-outlet name="popup"></router-outlet>
