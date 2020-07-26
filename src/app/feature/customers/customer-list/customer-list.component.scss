@@ -1,0 +1,19 @@
+label {
+  display: inline-block;
+
+width: 150px;
+
+&.selected {
+    background-color: #CFD8DC;
+
+color: white;
+
+&:hover {
+      background-color: #BBD8DC;
+    }
+  }
+}
+
+.customer-list {
+  width: 50%;
+}

@@ -1,0 +1,20 @@
+<p>customer-list works!</p>
+<form [formGroup]="paymentForm" #pform>
+  <input #ccNumber id="cc-number" formControlName="cardNumber" type="tel" title="Card number" placeholder="0000 0000 0000 0000" maxlength="19" [value]="ccNumber.value | paymentCardNumber" (input)="ccNumber.value=$event.target.value">
+  <mat-slider min="1" max="100" step="1" value="1">123</mat-slider>
+  <p>Customers(classic radio):</p>
+  <div *ngFor="let cus of customers; index as i; odd as isOdd;">
+    <input type="radio" id="customer-{{i}}" name="selectedCustomer" (click)="selectCustomer($event, cus.id)">
+    <label for="customer-{{i}}" [class.selected]="cus.id === beforeId">{{ cus.name }}</label>
+    <a *ngIf="isOdd" [routerLink]="['detail', cus.id]">Odd: {{ cus.id }}</a>
+    <a *ngIf="!isOdd" [routerLink]="['/customers/detail', cus.id]">Even: {{ cus.id }}</a>
+  </div>
+  <p>Customers(angular material radio):</p>
+  <mat-radio-group class="customer-list col-display" (change)="customerId=$event.value">
+    <mat-radio-button id="customer-test-{{i}}" name="selCustomer" [value]="cus.id"
+      *ngFor="let cus of customers; index as i; odd as isOdd;">{{ cus.name }}</mat-radio-button>
+  </mat-radio-group>
+  <button type="button" (click)="toDetail()">Go to detail</button>
+</form>
+<div style="height: 1000px; width: 100%;">test for rooter scroll top!</div>
+<p>customer-list end!</p>
