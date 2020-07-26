@@ -1,4 +1,4 @@
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,7 +9,6 @@ import { MetaService } from './core/service/meta.service';
 import { SysErrorComponent } from './error/sys-error/sys-error.component';
 import { CoreModule } from './core/core.module';
 import { ComposeMessageComponent } from './core/message/compose-message/compose-message.component';
-import { AdminModule } from './feature/admin/admin.module';
 
 @NgModule({
   declarations: [

@@ -1,4 +1,3 @@
-import { AdminModule } from './../../feature/admin/admin.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
