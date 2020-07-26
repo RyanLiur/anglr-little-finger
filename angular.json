@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "anglr-little-finger": {
+    "mini-figure": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/anglr-little-finger",
+            "outputPath": "dist/mini-figure",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "anglr-little-finger:build"
+            "browserTarget": "mini-figure:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "anglr-little-finger:build:production"
+              "browserTarget": "mini-figure:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "anglr-little-finger:build"
+            "browserTarget": "mini-figure:build"
           }
         },
         "test": {
@@ -115,16 +115,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "anglr-little-finger:serve"
+            "devServerTarget": "mini-figure:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "anglr-little-finger:serve:production"
+              "devServerTarget": "mini-figure:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "anglr-little-finger"
+  "defaultProject": "mini-figure"
 }

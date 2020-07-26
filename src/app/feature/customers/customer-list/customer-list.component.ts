@@ -97,6 +97,11 @@ export class CustomerListComponent implements OnInit, CanComponentDeactivate {
     this.customerId = e.target.checked ? id : undefined;
   }
 
+  selCustomer(e) {
+    console.log('`id: ${id}`');
+    // this.customerId = e.target.checked ? id : undefined;
+  }
+
   toDetail() {
     if (this.customerId) {
       this.router.navigate(['customers/detail', this.customerId]);

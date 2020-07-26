@@ -1,1 +1,1 @@
-# anglr-little-finger
+# mini-figure
